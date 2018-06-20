@@ -1,0 +1,87 @@
+html,
+body {
+  background: rgb(20, 20, 20);
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.svg-wrapper {
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+}
+
+.animate {
+  fill: transparent;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 600;
+  stroke-width: 1px;
+  stroke: #fdad59;
+  animation: draw 3s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  transform: rotate(45deg);
+}
+
+.two {
+  fill: transparent;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 600;
+  stroke-width: 1px;
+  stroke: #fdad59;
+  animation: drawb 3s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  transform: rotate(45deg);
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 600;
+    stroke-dashoffset: -600;
+    stroke-width:1px;
+    transform: rotateY(0deg) rotate(45deg);
+  }
+  50% {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 0;
+    stroke-width: 1px;
+  }
+  100% {
+    stroke-dasharray: 600;
+    stroke-dashoffset: -600;
+    stroke-width: 1px;
+    transform: rotateY(360deg) rotate(45deg);
+  }
+}
+
+
+@keyframes drawb {
+  0% {
+    stroke-dasharray:  600;
+    stroke-dashoffset: -400;
+    stroke-width:1px;
+    transform: rotateX(180deg) rotate(45deg);
+  }
+  50% {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 0;
+    stroke-width: 1px;
+  }
+  100% {
+    stroke-dasharray:  600;
+    stroke-dashoffset: -400;
+    stroke-width: 1px;
+    transform: rotateX(-180deg) rotate(45deg);
+  }
+}
+
+.svg-wrapper .shape {
+  -webkit-animation: 4s draw ease;
+  animation: 4s draw ease;
+  animation-iteration-count: infinite;
+}
